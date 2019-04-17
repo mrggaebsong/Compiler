@@ -12,8 +12,9 @@ void updateSymbolVal(char symbol, int val);
 
 %union {long long int num; char id;}         /* Yacc definitions */
 %start startline
-%token print println newline
-%token exit_command
+%token print println newline 
+%token while do statement
+%token exit_command 
 %token <num> number string
 %token <id> identifier
 %type <num> line exp term 
@@ -26,16 +27,19 @@ startline :
     | startline line
     ;
 
-line: assignment newline		{}
+line: newline                   {printf(">>> ");}
+    | assignment newline		{printf(">>> ");}
     | exit_command newline	    {exit(0); }
-    | println exp newline      {printf("%lld\n", $2);}
-    | print exp	newline		   {printf("%lld", $2);}
-    | print string newline     {printf("%s\n",(char * )($2));}
-    | println string newline   {printf("%s\n",(char * )($2));}
+    | println exp newline      {printf(">>>%lld\n", $2);}
+    | print exp	newline		   {printf(">>>%lld", $2);}
+    | print string newline     {printf(">>>%s\n",(char * )($2));}
+    | println string newline   {printf(">>>%s\n",(char * )($2));}
+    | while exp do statement newline        {printf(">>> ");}
     ;
 
 assignment: identifier '=' exp  { updateSymbolVal($1,$3); }
     ;
+
 
 exp: term                  {$$ = $1;}
     | exp '+' exp          {$$ = $1 + $3;}
