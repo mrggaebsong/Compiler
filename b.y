@@ -11,8 +11,8 @@ void updateSymbolVal(char symbol, int val);
 %}
 
 %union {long long int num; char id;}         /* Yacc definitions */
-%start line
-%token print println 
+%start startline
+%token print println newline
 %token exit_command
 %token <num> number string
 %token <id> identifier
@@ -22,18 +22,16 @@ void updateSymbolVal(char symbol, int val);
 
 %%
 
+startline :
+    |startline line
+    ;
 
-line: assignment ';'		{}
-    | exit_command ';'		{exit(EXIT_SUCCESS); }
-    | println exp  ';'      {printf("%lld\n", $2);}
-    | print exp ';'			{printf("%lld", $2);}
-    | print string ';'      {printf("%s",(char * )($2));}
-    | line print string ';' {printf("%s",(char * )($3));}
-    | println string ';'    {printf("%s\n",(char * )($2));}
-    | line assignment ';'	{}
-    | line print exp ';'	{printf("%lld", $3);}
-    | line println exp  ';' {printf("%lld\n", $3);}
-    | line exit_command ';'	{exit(0);}
+line: assignment newline		{}
+    | exit_command newline	    {exit(0); }
+    | println exp newline      {printf("%lld\n", $2);}
+    | print exp	newline		   {printf("%lld", $2);}
+    | print string newline     {printf("%s\n",(char * )($2));}
+    | println string newline   {printf("%s\n",(char * )($2));}
     ;
 
 assignment: identifier '=' exp  { updateSymbolVal($1,$3); }
@@ -105,12 +103,13 @@ int main (int argc , char ** argv) {
 		printf("Sawaddeeja. ni keu \" pasa karaoke\". version 1.0.0 by 0272 , 0823 , 0874 , 1189\n");
 		return yyparse();
 	}else{
-        yyout = fopen(argv[2],"w");
-        yyin = fopen(argv[1], "r");
+        //yyout = fopen(argv[2],"w");
+        //yyin = fopen(argv[1], "r");
+        yyin = stdin;
         do{
     	    yyparse();         
         }while(!feof(yyin));
-        fclose(yyout);
+        //fclose(yyout);
         fclose(yyin);
     }
 	return 0;

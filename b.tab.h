@@ -47,10 +47,11 @@ extern int yydebug;
   {
     print = 258,
     println = 259,
-    exit_command = 260,
-    number = 261,
-    string = 262,
-    identifier = 263
+    newline = 260,
+    exit_command = 261,
+    number = 262,
+    string = 263,
+    identifier = 264
   };
 #endif
 
@@ -62,7 +63,7 @@ union YYSTYPE
 #line 13 "b.y" /* yacc.c:1909  */
 long long int num; char id;
 
-#line 66 "b.tab.h" /* yacc.c:1909  */
+#line 67 "b.tab.h" /* yacc.c:1909  */
 };
 
 typedef union YYSTYPE YYSTYPE;

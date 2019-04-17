@@ -23,9 +23,10 @@ void comment(int i);
 "print"			       {return print;}
 "println"			   {return println;}
 "bye"				   {return exit_command;}
+"\n"                   {return newline;}
 {L}({L}|{D})*		   {yylval.id = yytext[0]; return identifier; }
 [0-9]+                 {yylval.num = atoi(yytext); return number;}
-[ \t\n]                {};
+[ \t]                {};
 [-+*/=;()%]            {return yytext[0];}
 
 <INITIAL>\"            {BEGIN(STRING);}
