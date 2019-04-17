@@ -34,7 +34,7 @@ line: newline                   {printf(">>> ");}
     | print exp	newline		   {printf(">>>%lld", $2);}
     | print string newline     {printf(">>>%s\n",(char * )($2));}
     | println string newline   {printf(">>>%s\n",(char * )($2));}
-    | while exp do statement newline        {printf(">>> ");}
+    | while exp do statement newline        {printf(">>>%i\n", $4);}
     ;
 
 assignment: identifier '=' exp  { updateSymbolVal($1,$3); }
