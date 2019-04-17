@@ -17,6 +17,7 @@ void comment(int i);
 %}
 
 %x STRING
+%x SINGLE_STRING
 
 %%
 
@@ -29,9 +30,15 @@ void comment(int i);
 [ \t]                {};
 [-+*/=;()%]            {return yytext[0];}
 
-<INITIAL>\"            {BEGIN(STRING);}
-<STRING>\"(\\.|\\\n|[^"\\])*\"        {BEGIN(INITIAL); yylval.num = strdup(yytext); return(string);}
+\"                          BEGIN(SINGLE_STRING);
 
+<SINGLE_STRING>{
+  \n                        yyerror("the string misses \" to termiate before newline");
+  <<EOF>>                   yyerror("the string misses \" to terminate before EOF");
+  ([^\\\"]|\\.)*            {yylval.num = strdup(yytext); return(string);}
+  \"                        BEGIN(INITIAL);
+  .                         ;
+}
 
 
 "/*"	               { comment(1);}
@@ -62,4 +69,3 @@ void comment(int i)
         }
     }
 }
-

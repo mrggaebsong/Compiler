@@ -23,7 +23,7 @@ void updateSymbolVal(char symbol, int val);
 %%
 
 startline :
-    |startline line
+    | startline line
     ;
 
 line: assignment newline		{}
