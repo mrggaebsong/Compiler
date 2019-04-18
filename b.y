@@ -50,8 +50,12 @@ statement: while_statement
     ;
 
 while_statement: while left exp right tail
+    | while left condition right tail
     ;
 
+condition: exp '<' exp      {$$ = $1 < $3;}
+    | exp '>' exp           {$$ = $1 > $3;}
+    ;
 
 tail: statement semi
     | left statement right
