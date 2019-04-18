@@ -1,5 +1,5 @@
 # Compiler
-ทำ Assignment Compiler จ้า
+ทำ Assignment Compiler จ้า [karaoke.oke]
 
 ------------------------------------
 >> Command Use: 
