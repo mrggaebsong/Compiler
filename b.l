@@ -28,10 +28,12 @@ void comment(int i);
 "do"                    {return do;}
 "\n"                   {return newline;}
 ";"                     {return semi;}
+"("                     {return left;}
+")"                     {return right;}
 {L}({L}|{D})*		   {yylval.id = yytext[0]; return identifier; }
 [0-9]+                 {yylval.num = atoi(yytext); return number;}
 [ \t]                {};
-[-+*/=()%]            {return yytext[0];}
+[-+*/=%]            {return yytext[0];}
 
 \"                          BEGIN(SINGLE_STRING);
 
