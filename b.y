@@ -41,11 +41,17 @@ line: newline semi                  {printf(">>> ");}
 assignment: identifier '=' exp  { updateSymbolVal($1,$3); }
     ;
 
+statements: statements statement
+    | statement
+    ;
+
 statement: while_statement
+    | assignment
     ;
 
 while_statement: while left exp right tail
     ;
+
 
 tail: statement semi
     | left statement right

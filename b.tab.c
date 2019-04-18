@@ -448,8 +448,8 @@ static const yytype_uint8 yytranslate[] =
 static const yytype_uint8 yyrline[] =
 {
        0,    27,    27,    28,    31,    32,    33,    34,    35,    36,
-      37,    41,    54,    55,    56,    57,    58,    67,    68,    69,
-      72,    73
+      37,    41,    60,    61,    62,    63,    64,    73,    74,    75,
+      78,    79
 };
 #endif
 
@@ -1295,31 +1295,31 @@ yyreduce:
     break;
 
   case 12:
-#line 54 "b.y" /* yacc.c:1646  */
+#line 60 "b.y" /* yacc.c:1646  */
     {(yyval.num) = (yyvsp[0].num);}
 #line 1301 "b.tab.c" /* yacc.c:1646  */
     break;
 
   case 13:
-#line 55 "b.y" /* yacc.c:1646  */
+#line 61 "b.y" /* yacc.c:1646  */
     {(yyval.num) = (yyvsp[-2].num) + (yyvsp[0].num);}
 #line 1307 "b.tab.c" /* yacc.c:1646  */
     break;
 
   case 14:
-#line 56 "b.y" /* yacc.c:1646  */
+#line 62 "b.y" /* yacc.c:1646  */
     {(yyval.num) = (yyvsp[-2].num) - (yyvsp[0].num);}
 #line 1313 "b.tab.c" /* yacc.c:1646  */
     break;
 
   case 15:
-#line 57 "b.y" /* yacc.c:1646  */
+#line 63 "b.y" /* yacc.c:1646  */
     {(yyval.num) = (yyvsp[-2].num) * (yyvsp[0].num);}
 #line 1319 "b.tab.c" /* yacc.c:1646  */
     break;
 
   case 16:
-#line 58 "b.y" /* yacc.c:1646  */
+#line 64 "b.y" /* yacc.c:1646  */
     {
     if((yyvsp[0].num)){
         (yyval.num) = (yyvsp[-2].num) / (yyvsp[0].num);
@@ -1332,31 +1332,31 @@ yyreduce:
     break;
 
   case 17:
-#line 67 "b.y" /* yacc.c:1646  */
+#line 73 "b.y" /* yacc.c:1646  */
     {(yyval.num) = (yyvsp[-2].num) % (yyvsp[0].num);}
 #line 1338 "b.tab.c" /* yacc.c:1646  */
     break;
 
   case 18:
-#line 68 "b.y" /* yacc.c:1646  */
+#line 74 "b.y" /* yacc.c:1646  */
     {(yyval.num) = - (yyvsp[0].num); }
 #line 1344 "b.tab.c" /* yacc.c:1646  */
     break;
 
   case 19:
-#line 69 "b.y" /* yacc.c:1646  */
+#line 75 "b.y" /* yacc.c:1646  */
     {(yyval.num) = (yyvsp[-1].num);}
 #line 1350 "b.tab.c" /* yacc.c:1646  */
     break;
 
   case 20:
-#line 72 "b.y" /* yacc.c:1646  */
+#line 78 "b.y" /* yacc.c:1646  */
     {(yyval.num) = (yyvsp[0].num);}
 #line 1356 "b.tab.c" /* yacc.c:1646  */
     break;
 
   case 21:
-#line 73 "b.y" /* yacc.c:1646  */
+#line 79 "b.y" /* yacc.c:1646  */
     {(yyval.num) = symbolVal((yyvsp[0].id));}
 #line 1362 "b.tab.c" /* yacc.c:1646  */
     break;
@@ -1590,7 +1590,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 76 "b.y" /* yacc.c:1906  */
+#line 82 "b.y" /* yacc.c:1906  */
                      /* C code */
 
 int computeSymbolIndex(char token)
