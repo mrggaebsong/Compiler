@@ -15,6 +15,7 @@ void updateSymbolVal(char symbol, int val);
 %token print println newline 
 %token while do statement
 %token exit_command 
+%token semi
 %token <num> number string
 %token <id> identifier
 %type <num> line exp term 
@@ -27,14 +28,14 @@ startline :
     | startline line
     ;
 
-line: newline                   {printf(">>> ");}
-    | assignment newline		{printf(">>> ");}
-    | exit_command newline	    {exit(0); }
-    | println exp newline      {printf(">>>%lld\n", $2);}
-    | print exp	newline		   {printf(">>>%lld", $2);}
-    | print string newline     {printf(">>>%s\n",(char * )($2));}
-    | println string newline   {printf(">>>%s\n",(char * )($2));}
-    | while exp do statement newline        {printf(">>>%i\n", $4);}
+line: newline semi                  {printf(">>> ");}
+    | assignment newline semi		{printf(">>> ");}
+    | exit_command newline semi	    {exit(0); }
+    | println exp newline semi     {printf(">>>%lld\n", $2);}
+    | print exp	newline	semi	   {printf(">>>%lld", $2);}
+    | print string newline semi    {printf(">>>%s\n",(char * )($2));}
+    | println string newline semi  {printf(">>>%s\n",(char * )($2));}
+    | while exp do statement newline        {print(">>>eiei");}
     ;
 
 assignment: identifier '=' exp  { updateSymbolVal($1,$3); }

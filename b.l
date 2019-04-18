@@ -27,10 +27,11 @@ void comment(int i);
 "while"                   {return while;}
 "do"                    {return do;}
 "\n"                   {return newline;}
+";"                     {return semi;}
 {L}({L}|{D})*		   {yylval.id = yytext[0]; return identifier; }
 [0-9]+                 {yylval.num = atoi(yytext); return number;}
 [ \t]                {};
-[-+*/=;()%]            {return yytext[0];}
+[-+*/=()%]            {return yytext[0];}
 
 \"                          BEGIN(SINGLE_STRING);
 
