@@ -30,6 +30,8 @@ void comment(int i);
 ";"                     {return semi;}
 "("                     {return left;}
 ")"                     {return right;}
+"<"                     {return lessthan;}
+">"                     {return morethan;}
 {L}({L}|{D})*		   {yylval.id = yytext[0]; return identifier; }
 [0-9]+                 {yylval.num = atoi(yytext); return number;}
 [ \t]                {};

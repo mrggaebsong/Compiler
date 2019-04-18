@@ -13,9 +13,9 @@ void updateSymbolVal(char symbol, int val);
 %union {long long int num; char id;}         /* Yacc definitions */
 %start startline
 %token print println newline 
-%token while do
+%token while do condition
 %token exit_command 
-%token semi left right
+%token semi left right morethan lessthan
 %token <num> number string
 %token <id> identifier
 %type <num> line exp term 
@@ -53,8 +53,8 @@ while_statement: while left exp right tail
     | while left condition right tail
     ;
 
-condition: exp '<' exp      {$$ = $1 < $3;}
-    | exp '>' exp           {$$ = $1 > $3;}
+condition: exp lessthan exp      {$$ = $1 < $3;}
+    | exp morethan exp           {$$ = $1 > $3;}
     ;
 
 tail: statement semi
