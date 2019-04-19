@@ -24,8 +24,8 @@ void updateSymbolVal(char symbol, int val);
 
 %%
 
-startline :
-    | startline line
+startline:
+    | startline line                {printf(">>> ");}
     ;
 
 line: newline semi                  {printf(">>> ");}

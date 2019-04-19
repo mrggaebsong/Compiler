@@ -1286,88 +1286,94 @@ yyreduce:
   YY_REDUCE_PRINT (yyn);
   switch (yyn)
     {
-        case 4:
-#line 31 "b.y" /* yacc.c:1646  */
+        case 3:
+#line 28 "b.y" /* yacc.c:1646  */
     {printf(">>> ");}
 #line 1293 "b.tab.c" /* yacc.c:1646  */
+    break;
+
+  case 4:
+#line 31 "b.y" /* yacc.c:1646  */
+    {printf(">>> ");}
+#line 1299 "b.tab.c" /* yacc.c:1646  */
     break;
 
   case 5:
 #line 32 "b.y" /* yacc.c:1646  */
     {printf(">>> ");}
-#line 1299 "b.tab.c" /* yacc.c:1646  */
+#line 1305 "b.tab.c" /* yacc.c:1646  */
     break;
 
   case 6:
 #line 33 "b.y" /* yacc.c:1646  */
     {exit(0); }
-#line 1305 "b.tab.c" /* yacc.c:1646  */
+#line 1311 "b.tab.c" /* yacc.c:1646  */
     break;
 
   case 7:
 #line 34 "b.y" /* yacc.c:1646  */
     {printf(">>> %lld\n", (yyvsp[-2].num));}
-#line 1311 "b.tab.c" /* yacc.c:1646  */
+#line 1317 "b.tab.c" /* yacc.c:1646  */
     break;
 
   case 8:
 #line 35 "b.y" /* yacc.c:1646  */
     {printf(">>> %lld", (yyvsp[-2].num));}
-#line 1317 "b.tab.c" /* yacc.c:1646  */
+#line 1323 "b.tab.c" /* yacc.c:1646  */
     break;
 
   case 9:
 #line 36 "b.y" /* yacc.c:1646  */
     {printf(">>> %s\n",(char * )((yyvsp[-2].num)));}
-#line 1323 "b.tab.c" /* yacc.c:1646  */
+#line 1329 "b.tab.c" /* yacc.c:1646  */
     break;
 
   case 10:
 #line 37 "b.y" /* yacc.c:1646  */
     {printf(">>> %s\n",(char * )((yyvsp[-2].num)));}
-#line 1329 "b.tab.c" /* yacc.c:1646  */
+#line 1335 "b.tab.c" /* yacc.c:1646  */
     break;
 
   case 11:
 #line 38 "b.y" /* yacc.c:1646  */
     {printf(">>> Looping\n");}
-#line 1335 "b.tab.c" /* yacc.c:1646  */
+#line 1341 "b.tab.c" /* yacc.c:1646  */
     break;
 
   case 12:
 #line 42 "b.y" /* yacc.c:1646  */
     { updateSymbolVal((yyvsp[-2].id),(yyvsp[0].num)); }
-#line 1341 "b.tab.c" /* yacc.c:1646  */
+#line 1347 "b.tab.c" /* yacc.c:1646  */
     break;
 
   case 13:
 #line 45 "b.y" /* yacc.c:1646  */
     {printf(">>> parsing loop successful\n");}
-#line 1347 "b.tab.c" /* yacc.c:1646  */
+#line 1353 "b.tab.c" /* yacc.c:1646  */
     break;
 
   case 26:
 #line 69 "b.y" /* yacc.c:1646  */
     {(yyval.num) = (yyvsp[0].num);}
-#line 1353 "b.tab.c" /* yacc.c:1646  */
+#line 1359 "b.tab.c" /* yacc.c:1646  */
     break;
 
   case 27:
 #line 70 "b.y" /* yacc.c:1646  */
     {(yyval.num) = (yyvsp[-2].num) + (yyvsp[0].num);}
-#line 1359 "b.tab.c" /* yacc.c:1646  */
+#line 1365 "b.tab.c" /* yacc.c:1646  */
     break;
 
   case 28:
 #line 71 "b.y" /* yacc.c:1646  */
     {(yyval.num) = (yyvsp[-2].num) - (yyvsp[0].num);}
-#line 1365 "b.tab.c" /* yacc.c:1646  */
+#line 1371 "b.tab.c" /* yacc.c:1646  */
     break;
 
   case 29:
 #line 72 "b.y" /* yacc.c:1646  */
     {(yyval.num) = (yyvsp[-2].num) * (yyvsp[0].num);}
-#line 1371 "b.tab.c" /* yacc.c:1646  */
+#line 1377 "b.tab.c" /* yacc.c:1646  */
     break;
 
   case 30:
@@ -1380,89 +1386,89 @@ yyreduce:
         fprintf (stderr, "division by zero \n"  );
     }
     }
-#line 1384 "b.tab.c" /* yacc.c:1646  */
+#line 1390 "b.tab.c" /* yacc.c:1646  */
     break;
 
   case 31:
 #line 82 "b.y" /* yacc.c:1646  */
     {(yyval.num) = (yyvsp[-2].num) % (yyvsp[0].num);}
-#line 1390 "b.tab.c" /* yacc.c:1646  */
+#line 1396 "b.tab.c" /* yacc.c:1646  */
     break;
 
   case 32:
 #line 83 "b.y" /* yacc.c:1646  */
     {(yyval.num) = - (yyvsp[0].num); }
-#line 1396 "b.tab.c" /* yacc.c:1646  */
+#line 1402 "b.tab.c" /* yacc.c:1646  */
     break;
 
   case 33:
 #line 84 "b.y" /* yacc.c:1646  */
     {(yyval.num) = (yyvsp[-1].num);}
-#line 1402 "b.tab.c" /* yacc.c:1646  */
+#line 1408 "b.tab.c" /* yacc.c:1646  */
     break;
 
   case 34:
 #line 85 "b.y" /* yacc.c:1646  */
     {(yyval.num) = (yyvsp[-2].num) && (yyvsp[0].num);}
-#line 1408 "b.tab.c" /* yacc.c:1646  */
+#line 1414 "b.tab.c" /* yacc.c:1646  */
     break;
 
   case 35:
 #line 86 "b.y" /* yacc.c:1646  */
     {(yyval.num) = (yyvsp[-2].num) || (yyvsp[0].num);}
-#line 1414 "b.tab.c" /* yacc.c:1646  */
+#line 1420 "b.tab.c" /* yacc.c:1646  */
     break;
 
   case 36:
 #line 87 "b.y" /* yacc.c:1646  */
     {(yyval.num) = (yyvsp[-2].num) != (yyvsp[0].num);}
-#line 1420 "b.tab.c" /* yacc.c:1646  */
+#line 1426 "b.tab.c" /* yacc.c:1646  */
     break;
 
   case 37:
 #line 88 "b.y" /* yacc.c:1646  */
     {(yyval.num) = (yyvsp[-2].num) == (yyvsp[0].num);}
-#line 1426 "b.tab.c" /* yacc.c:1646  */
+#line 1432 "b.tab.c" /* yacc.c:1646  */
     break;
 
   case 38:
 #line 89 "b.y" /* yacc.c:1646  */
     {(yyval.num) = (yyvsp[-2].num) < (yyvsp[0].num);}
-#line 1432 "b.tab.c" /* yacc.c:1646  */
+#line 1438 "b.tab.c" /* yacc.c:1646  */
     break;
 
   case 39:
 #line 90 "b.y" /* yacc.c:1646  */
     {(yyval.num) = (yyvsp[-2].num) <= (yyvsp[0].num);}
-#line 1438 "b.tab.c" /* yacc.c:1646  */
+#line 1444 "b.tab.c" /* yacc.c:1646  */
     break;
 
   case 40:
 #line 91 "b.y" /* yacc.c:1646  */
     {(yyval.num) = (yyvsp[-2].num) > (yyvsp[0].num);}
-#line 1444 "b.tab.c" /* yacc.c:1646  */
+#line 1450 "b.tab.c" /* yacc.c:1646  */
     break;
 
   case 41:
 #line 92 "b.y" /* yacc.c:1646  */
     {(yyval.num) = (yyvsp[-2].num) >= (yyvsp[0].num);}
-#line 1450 "b.tab.c" /* yacc.c:1646  */
+#line 1456 "b.tab.c" /* yacc.c:1646  */
     break;
 
   case 42:
 #line 95 "b.y" /* yacc.c:1646  */
     {(yyval.num) = (yyvsp[0].num);}
-#line 1456 "b.tab.c" /* yacc.c:1646  */
+#line 1462 "b.tab.c" /* yacc.c:1646  */
     break;
 
   case 43:
 #line 96 "b.y" /* yacc.c:1646  */
     {(yyval.num) = symbolVal((yyvsp[0].id));}
-#line 1462 "b.tab.c" /* yacc.c:1646  */
+#line 1468 "b.tab.c" /* yacc.c:1646  */
     break;
 
 
-#line 1466 "b.tab.c" /* yacc.c:1646  */
+#line 1472 "b.tab.c" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
