@@ -13,9 +13,9 @@ void updateSymbolVal(char symbol, int val);
 %union {long long int num; char id;}         /* Yacc definitions */
 %start startline
 %token print println newline 
-%token while do condition
+%token WHILE AND OR NTEQ EQ LT LTEQ GT GTEQ
 %token exit_command 
-%token semi left right morethan lessthan
+%token semi
 %token <num> number string
 %token <id> identifier
 %type <num> line exp term 
@@ -41,25 +41,29 @@ line: newline semi                  {printf(">>> ");}
 assignment: identifier '=' exp  { updateSymbolVal($1,$3); }
     ;
 
-statements: statements statement
-    | statement
-    ;
+while_statement: WHILE '(' condition ')' '{' '}' {printf("parsing loop successful");}
+	;
 
-statement: while_statement
-    | assignment
-    ;
+condition: scond
+	| scond logop condition
+	;
 
-while_statement: while left exp right tail
-    | while left condition right tail
-    ;
+scond: term
+	| term relop term
+	;
 
-condition: exp lessthan exp      {$$ = $1 < $3;}
-    | exp morethan exp           {$$ = $1 > $3;}
-    ;
 
-tail: statement semi
-    | left statement right
-    ;
+logop: AND
+	| OR
+	;
+
+relop: NTEQ
+	| EQ
+	| LT
+	| LTEQ
+	| GT
+	| GTEQ
+	;
 
 exp: term                  {$$ = $1;}
     | exp '+' exp          {$$ = $1 + $3;}
@@ -76,7 +80,7 @@ exp: term                  {$$ = $1;}
 
 	| exp '%' exp          {$$ = $1 % $3;}
 	| '-' exp 				{$$ = - $2; }
-    | left exp right			{$$ = $2;}
+    | '(' exp ')'			{$$ = $2;}
     ;
 
 term: number                {$$ = $1;}

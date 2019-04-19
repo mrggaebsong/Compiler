@@ -24,18 +24,21 @@ void comment(int i);
 "print"			       {return print;}
 "println"			   {return println;}
 "bye"				   {return exit_command;}
-"while"                   {return while;}
-"do"                    {return do;}
+"while"                 {return WHILE;}
+"&&"                    {return AND;}
+"||"                    {return OR;}
+"!="                    {return NTEQ;}
+"=="                    {return EQ;}
+"<"                     {return LT;}
+"<="                    {return LTEQ;}
+">"                     {return GT;}
+">="                    {return GTEQ;}
 "\n"                   {return newline;}
 ";"                     {return semi;}
-"("                     {return left;}
-")"                     {return right;}
-"<"                     {return lessthan;}
-">"                     {return morethan;}
 {L}({L}|{D})*		   {yylval.id = yytext[0]; return identifier; }
 [0-9]+                 {yylval.num = atoi(yytext); return number;}
 [ \t]                {};
-[-+*/=%]            {return yytext[0];}
+[-+*/=%{}()]            {return yytext[0];}
 
 \"                          BEGIN(SINGLE_STRING);
 
