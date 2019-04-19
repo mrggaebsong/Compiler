@@ -42,11 +42,32 @@ line: newline                     {printf(">>> ");}
 assignment: identifier '=' exp  { updateSymbolVal($1,$3); }
     ;
 
-while_statement: WHILE '(' condition ')' '{' '}' {printf(">>> parsing loop successful\n");}
+program: declarations statements 
+    ;
+
+declarations: declarations declaration 
+    | declaration;
+
+declaration: assignment
+    ;
+
+statements: statements statement
+    | statement
+    ;
+
+statement: while_statement;
+    | assignment
+    | scond semi
+    | condition semi
+    | line
+    ;
+
+while_statement: WHILE '(' condition ')' '{' statement semi '}' {printf(">>> parsing loop successful\n");}
 	;
 
 condition: scond
 	| scond boolean condition
+    | term boolean term
 	;
 
 scond: term
