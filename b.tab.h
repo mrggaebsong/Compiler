@@ -59,9 +59,10 @@ extern int yydebug;
     GTEQ = 269,
     exit_command = 270,
     semi = 271,
-    number = 272,
-    string = 273,
-    identifier = 274
+    hex = 272,
+    number = 273,
+    string = 274,
+    identifier = 275
   };
 #endif
 
@@ -73,7 +74,7 @@ union YYSTYPE
 #line 13 "b.y" /* yacc.c:1909  */
 long long int num; char id;
 
-#line 77 "b.tab.h" /* yacc.c:1909  */
+#line 78 "b.tab.h" /* yacc.c:1909  */
 };
 
 typedef union YYSTYPE YYSTYPE;

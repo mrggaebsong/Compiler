@@ -15,7 +15,7 @@ void updateSymbolVal(char symbol, int val);
 %token print println newline 
 %token WHILE AND OR NTEQ EQ LT LTEQ GT GTEQ
 %token exit_command 
-%token semi
+%token semi hex
 %token <num> number string
 %token <id> identifier
 %type <num> line exp term
@@ -33,6 +33,8 @@ line: newline                     {printf(">>> ");}
     | exit_command semi newline 	    {exit(0); }
     | println exp semi newline      {printf(">>> %lld\n", $2);}
     | print exp	semi newline		   {printf(">>> %lld", $2);}
+    | print exp hex semi newline    {printf(">>> %x", (int)$2);}
+    | println exp hex semi newline    {printf(">>> %x", (int)$2);}
     | print string semi newline     {printf(">>> %s\n",(char * )($2));}
     | println string semi newline   {printf(">>> %s\n",(char * )($2));}
     | while_statement newline       {printf(">>> Looping\n");}

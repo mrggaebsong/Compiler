@@ -9,6 +9,9 @@ IS			(u|U|l|L)*
 %{
 #include "b.tab.h"
 #include <string.h>
+#include <stdio.h>
+int n,r,digit=0,count,pcount=0,i;
+char a[20];
 void yyerror (char *s);
 int yylex();
 
@@ -35,6 +38,7 @@ void comment(int i);
 ">="                    {return GTEQ;}
 "\n"                   {return newline;}
 ";"                     {return semi;}
+".hex"                   {return hex;}
 {L}({L}|{D})*		   {yylval.id = yytext[0]; return identifier; }
 [0-9]+                 {yylval.num = atoi(yytext); return number;}
 [ \t]                {};
