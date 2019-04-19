@@ -25,10 +25,10 @@ void updateSymbolVal(char symbol, int val);
 %%
 
 startline:
-    | startline line                {printf(">>> ");}
+    | startline line               
     ;
 
-line: newline semi                  {printf(">>> ");}
+line: newline                     {printf(">>> ");}
     | assignment semi newline 		{printf(">>> ");}
     | exit_command semi newline 	    {exit(0); }
     | println exp semi newline      {printf(">>> %lld\n", $2);}
