@@ -28,8 +28,8 @@ void comment(int i);
 "println"			   {return println;}
 "bye"				   {return exit_command;}
 "while"                 {return WHILE;}
-"&&"                    {return AND;}
-"||"                    {return OR;}
+"&"                    {return AND;}
+"|"                    {return OR;}
 "!="                    {return NTEQ;}
 "=="                    {return EQ;}
 "<"                     {return LT;}

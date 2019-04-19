@@ -69,7 +69,6 @@ while_statement: WHILE '(' condition ')' '{' statement semi '}' {printf(">>> par
 
 condition: scond
 	| scond boolean condition
-    | term boolean term
 	;
 
 scond: term
