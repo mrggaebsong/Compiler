@@ -38,7 +38,7 @@ void comment(int i);
 ">="                    {return GTEQ;}
 "\n"                   {return newline;}
 ";"                     {return semi;}
-".hex"                   {return hex;}
+"hex"                   {return hex;}
 {L}({L}|{D})*		   {yylval.id = yytext[0]; return identifier; }
 [0-9]+                 {yylval.num = atoi(yytext); return number;}
 [ \t]                {};
