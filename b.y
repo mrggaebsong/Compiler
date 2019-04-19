@@ -18,7 +18,7 @@ void updateSymbolVal(char symbol, int val);
 %token semi
 %token <num> number string
 %token <id> identifier
-%type <num> line exp term 
+%type <num> line exp term
 %type <id> assignment
 
 
@@ -29,35 +29,36 @@ startline :
     ;
 
 line: newline semi                  {printf(">>> ");}
-    | assignment newline semi		{printf(">>> ");}
-    | exit_command newline semi	    {exit(0); }
-    | println exp newline semi     {printf(">>>%lld\n", $2);}
-    | print exp	newline	semi	   {printf(">>>%lld", $2);}
-    | print string newline semi    {printf(">>>%s\n",(char * )($2));}
-    | println string newline semi  {printf(">>>%s\n",(char * )($2));}
+    | assignment semi newline 		{printf(">>> ");}
+    | exit_command semi newline 	    {exit(0); }
+    | println exp semi newline      {printf(">>> %lld\n", $2);}
+    | print exp	semi newline		   {printf(">>> %lld", $2);}
+    | print string semi newline     {printf(">>> %s\n",(char * )($2));}
+    | println string semi newline   {printf(">>> %s\n",(char * )($2));}
+    | while_statement newline       {printf(">>> Looping\n");}
     
     ;
 
 assignment: identifier '=' exp  { updateSymbolVal($1,$3); }
     ;
 
-while_statement: WHILE '(' condition ')' '{' '}' {printf("parsing loop successful");}
+while_statement: WHILE '(' condition ')' '{' '}' {printf(">>> parsing loop successful\n");}
 	;
 
 condition: scond
-	| scond logop condition
+	| scond boolean condition
 	;
 
 scond: term
-	| term relop term
+	| term compare term
 	;
 
 
-logop: AND
-	| OR
+boolean: AND
+	| OR                
 	;
 
-relop: NTEQ
+compare: NTEQ
 	| EQ
 	| LT
 	| LTEQ
@@ -81,6 +82,14 @@ exp: term                  {$$ = $1;}
 	| exp '%' exp          {$$ = $1 % $3;}
 	| '-' exp 				{$$ = - $2; }
     | '(' exp ')'			{$$ = $2;}
+    | exp AND exp           {$$ = $1 && $3;}
+    | exp OR exp            {$$ = $1 || $3;}
+    | exp NTEQ exp          {$$ = $1 != $3;}
+    | exp EQ exp            {$$ = $1 == $3;}
+    | exp LT exp            {$$ = $1 < $3;}
+    | exp LTEQ exp          {$$ = $1 <= $3;}
+    | exp GT exp            {$$ = $1 > $3;}
+    | exp GTEQ exp          {$$ = $1 >= $3;}
     ;
 
 term: number                {$$ = $1;}
