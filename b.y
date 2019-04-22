@@ -33,8 +33,22 @@ line: newline                     {printf(">>> ");}
     | exit_command semi newline 	    {exit(0); }
     | println exp semi newline      {printf(">>> %lld\n", $2);}
     | print exp	semi newline		   {printf(">>> %lld", $2);}
-    | print hex '('exp')' semi newline    {printf(">>> %X", (int)$4);}
-    | println hex '('exp')' semi newline    {printf(">>> %X\n", (int)$4);}
+    | print hex '('exp')' semi newline    {
+                                            if((int)$4 < 17){
+                                                printf(">>> 0x0%X", (int)$4);
+                                            }
+                                            else {
+                                                printf(">>> 0x%X", (int)$4);
+                                            }
+                                        }
+    | println hex '('exp')' semi newline    {
+                                            if((int)$4 < 17){
+                                                printf(">>> 0x0%X", (int)$4);
+                                            }
+                                            else {
+                                                printf(">>> 0x%X", (int)$4);
+                                            }
+                                        }
     | print string semi newline     {printf(">>> %s\n",(char * )($2));}
     | println string semi newline   {printf(">>> %s\n",(char * )($2));}
     | while_statement newline       {printf(">>> Looping\n");}
