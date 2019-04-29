@@ -1,0 +1,1 @@
+test = 1Eh;tt = 10d;sadangDln(test);sadangHln(test);sadangDln(tt);sadangHln(tt);
