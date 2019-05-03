@@ -1,0 +1,28 @@
+n = 20d;
+i = 2d;
+f = 0d;
+
+thumsum(i < n/2)
+{
+    tha(n%i == 0)
+    {
+        f = 1d;
+    }
+    i = i+1;
+}
+
+tha (n == 1) 
+{
+    sadangSln("1 is neither a prime nor a composite number.");
+}
+maikor
+{
+    tha (f == 0){
+        sadangD (n);
+        sadangSln(" is a prime number.");
+    }
+    maikor{
+        sadangD (n);
+        sadangSln(" is not a prime number.");
+    }    
+}

@@ -1,0 +1,14 @@
+first = 6d;
+sec = 7d;
+third = 1d;
+fourth = 3d;
+
+sadangDln(first);
+sadangDln(sec);
+sadangDln(third);
+sadangDln(fourth);
+
+ans = ((first * fourth) + sec) - third;
+
+sadangS("\nThe Answer is ");
+sadangDln(ans);

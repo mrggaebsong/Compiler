@@ -1,0 +1,25 @@
+sum=0d;
+count=0d;
+
+ar[0]=272d;
+ar[1]=823d;
+ar[2]=874d;
+ar[3]=-1189d;
+ar[4]=3d;
+ar[5]=2019d;
+
+
+
+thumsum(count < 6)
+{
+    sum=sum+ar[count];
+    sadangS("index ");
+    sadangD(count);
+    sadangS(" is ");
+    sadangDln(ar[count]);
+
+    count=count +1;
+}
+
+sadangS("Averange is ");
+sadangDln(sum/count);

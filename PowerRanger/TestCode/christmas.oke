@@ -1,0 +1,79 @@
+row=5d;
+col=5d;
+counti=0d;
+countj=0d;
+countk=0d;
+
+thumsum(counti <= row)
+{
+    thumsum(countj <= (row-counti)+row)
+    {
+        sadangS(" ");
+        countj=countj+1;
+    }
+    thumsum(countk <= (counti*2+1))
+    {
+        sadangS("*");
+        countk=countk+1;
+    }
+    sadangSln("");
+    counti=counti+1;
+    countj=0d;
+    countk=0d;
+}
+counti=2d;
+thumsum(counti <= row)
+{
+    thumsum(countj <= (row-counti)+row)
+    {
+        sadangS(" ");
+        countj=countj+1;
+    }
+    thumsum(countk <= (counti*2+1))
+    {
+        sadangS("*");
+        countk=countk+1;
+    }
+    counti=counti+1;
+    sadangSln("");
+    countj=0d;
+    countk=0d;
+}
+counti=2d;
+thumsum(counti <= row)
+{
+    thumsum(countj <= (row-counti)+row)
+    {
+        sadangS(" ");
+        countj=countj+1;
+    }
+    thumsum(countk <= (counti*2+1))
+    {
+        sadangS("*");
+        countk=countk+1;
+    }
+    counti=counti+1;
+    sadangSln("");
+    countj=0d;
+    countk=0d;
+}
+counti=0d;
+countj=0d;
+countk=0d;
+thumsum(counti<=row)
+{
+    thumsum(countj <= row*2)
+    {
+        sadangS(" ");
+        countj=countj+1;
+    }
+    thumsum(countk <= col/2)
+    {
+        sadangS("*");
+        countk=countk+1;
+    }
+    counti=counti+1;
+    sadangSln("");
+    countj=0d;
+    countk=0d;
+}

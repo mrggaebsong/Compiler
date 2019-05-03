@@ -1,0 +1,21 @@
+a = 50d;
+b = 100d;
+c = 23d;
+
+tha(a > b){
+    tha(a > c){
+        sadangSln("a is Max!");
+    }
+}
+
+tha(b > a){
+    tha(b > c){
+        sadangSln("b is Max!");
+    }
+}
+
+tha(c > a){
+    tha(c > b){
+        sadangSln("c is Max!");
+    }
+}

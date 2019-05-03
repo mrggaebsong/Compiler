@@ -1,0 +1,9 @@
+aa[0] = 'name'
+aa[1] = 1d;
+aa[2] = 14h;
+
+count = 0d;
+
+thumsum(count < 3){
+    sadangD(aa[count]);
+}

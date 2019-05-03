@@ -1,0 +1,31 @@
+sadangS("Please enter your score: ");
+geti(score);
+
+sadangS("Your score: ");
+sadangDln(score);
+sadangS("You got grade ");
+
+tha (score >= 80){
+    sadangSln("A");
+}
+maikor tha (score >= 75) {
+    sadangSln("B+");
+}
+maikor tha (score >= 70) {
+    sadangSln("B");
+}
+maikor tha (score >= 65) {
+    sadangSln("C+");
+}
+maikor tha (score >= 60) {
+    sadangSln("C");
+}
+maikor tha (score >= 55) {
+    sadangSln("D+");
+}
+maikor tha (score >= 50) {
+    sadangSln("D");
+}
+maikor {
+    sadangSln("F");
+}

@@ -1,0 +1,26 @@
+tmp1 = 0d;   // start number 
+end = 100d;   // end number
+
+
+tmp2 = tmp1 + 1d;;   
+next = 0d;
+
+sadangD(tmp1);
+sadangS(" ");
+sadangD(tmp2);
+sadangS(" ");
+
+
+thumsum(tmp1 + tmp2 <= end){
+
+    next = tmp1 + tmp2;
+
+    sadangD(next);
+    sadangS(" ");
+
+    tmp1 = tmp2;
+    tmp2 = next;
+
+}
+
+sadangS("\n");

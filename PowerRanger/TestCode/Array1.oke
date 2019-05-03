@@ -1,0 +1,48 @@
+aaa[0]=5;
+aaa[1]=75d;
+aaa[2]=54d;
+aaa[3]=20d;   //offset
+
+
+aaa[4]=11d;
+aaa[5]=6d;
+aaa[6]=7d;
+aaa[7]=8d;
+aaa[8]=9999d;
+aaa[9]=10d;
+aaa[10]=-1d;
+aaa[11]=20;
+aaa[12]=101d;
+aaa[13]=823d;
+aaa[14]=272d;
+aaa[15]=874d;
+aaa[16]=-1189d;
+aaa[17]=48d;
+aaa[18]=11d;
+aaa[19]=-22d;
+aaa[20]=-9999d;
+aaa[21]=48d;
+aaa[22]=11d;
+aaa[23]=10222d;
+
+count=4d;
+min =0d;
+max=0d;
+
+
+thumsum(count < 24)
+{
+    tha (aaa[count]>max)
+    {
+        max=aaa[count];
+    }
+    tha (aaa[count]<min)
+    {
+        min=aaa[count];
+    }
+    count=count +1;
+}
+sadangS("MIN from array = ");
+sadangDln(min);
+sadangS("MAX from array = ");
+sadangDln(max);
