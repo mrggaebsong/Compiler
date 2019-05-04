@@ -1,0 +1,30 @@
+n = 1d;
+
+thumsum(n < 101){
+	f=0d;
+	i=2d;
+	f=0d;
+	thumsum(i < (n/2)+1)
+	{
+	    tha(n%i == 0)
+	    {
+	        f = 1d;
+	    }
+	    i = i+1;
+	}
+	tha (n == 1) 
+	{
+		sadangS("");
+	}
+	maikor
+	{
+		tha (f == 0){
+			sadangD(n);
+			sadangS(" ");
+		}
+	}
+	n = n + 1;
+}
+sadangSln("");
+
+
